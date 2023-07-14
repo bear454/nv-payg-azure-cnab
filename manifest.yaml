@@ -1,0 +1,11 @@
+applicationName: com.suse.azure-marketplace-values
+publisher: "SUSE"
+description: "A test package for the marketplace CNAB structure with existing cluster."
+version: 0.0.1 #Must be in the format of #.#.#
+helmChart: "./azure-marketplace-values"
+clusterArmTemplate: "./mainTemplate.json"
+uiDefinition: "./createUIDefinition.json"
+registryServer: "jmasontest.azurecr.io"
+extensionRegistrationParameters:
+  defaultScope: "cluster" # cluster or namespace
+  namespace: "default" # Specify the namespace the extension will install into. This property is required when defaultScope field value is chosen as 'cluster'
