@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bci-base
+  labels:
+    app: bci-base
+spec:
+  replicas: {{ .Values.replicaCount }}
+  strategy:
+    type: Recreate
+  template:
+    spec:
+      containers:
+      - name: bci-base
+        image: registry.suse.com/bci/bci-base:latest
+        command: ['sh', '-c', 'echo The app is running! && sleep 3600']
+    metadata:
+      labels:
+        app: bci-base
+  selector:
+    matchLabels:
+      app: bci-base

@@ -2,5 +2,5 @@ apiVersion: v2
 name: azure-marketplace-values
 description: Creates a configmap of the Azure-generated marketplace helm values
 type: application
-version: 0.1.0
-appVersion: "0.0.1"
+version: 0.2.2
+appVersion: "latest"
