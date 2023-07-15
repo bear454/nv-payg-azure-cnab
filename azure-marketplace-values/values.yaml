@@ -20,7 +20,11 @@ global:
     extension:
       # resource id of the Azure Marketplace Kubernetes application,to be used in usage event payload to metering api, for more information please refer: https://learn.microsoft.com/en-us/partner-center/marketplace/marketplace-metering-service-apis
       resourceId: "DONOTMODIFY" # application's Azure Resource ID, Azure populates this value at deployment time
-    images: {}
+    images:
+      base:
+        digest: sha256:06724ac024bb9dbed0dd01dba3833fbd69ec483b871ddaf00da6bdd377e89c7f
+        image: bci-base
+        registry: jmasontest.azurecr.io
 
 podAnnotations: {}
 podSecurityContext: {}

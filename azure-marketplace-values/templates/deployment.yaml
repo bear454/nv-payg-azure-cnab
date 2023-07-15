@@ -11,12 +11,13 @@ spec:
   template:
     spec:
       containers:
-      - name: bci-base
-        image: registry.suse.com/bci/bci-base:latest
-        command: ['sh', '-c', 'echo The app is running! && sleep 3600']
+      - name: bci-base-{{ .Release.Name }}
+        image: "{{ .Values.global.azure.images.base.registry }}/{{ .Values.global.azure.images.base.image }}@{{ .Values.global.azure.images.base.digest }}"
+        command: ['sh', '-c', 'echo Have a lot of fun! && sleep 3600']
     metadata:
       labels:
         app: bci-base
+        azure-extensions-usage-release-identifier: {{ .Release.Name }}
   selector:
     matchLabels:
       app: bci-base
